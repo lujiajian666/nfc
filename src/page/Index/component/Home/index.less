@@ -1,0 +1,116 @@
+.title {
+  margin: 0 0 20px 20px;
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 35px;
+}
+.swiper {
+  :global(.swiper-pagination-bullet:not(.swiper-pagination-bullet-active)) {
+    background: white;
+  }
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  margin: 0 0% 50px;
+  padding: 15% 0;
+  overflow: hidden;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.game-area {
+  width: 100%;
+  padding: 0 20px 40px;
+}
+.game-card {
+  display: inline-block;
+  width: 45%;
+  margin-bottom: 40px;
+  &:nth-of-type(2n+1) {
+    margin-right: 3%;
+  }
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 60%);
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    width: 104%;
+  }
+  .desc {
+    color: var(--primary-color);
+    padding: 10px 10px 18px;
+    background-color: white;
+  }
+  .type-and-point {
+    .color(@color) {
+      border: 1px solid @color;
+      color: @color;
+    }
+    margin: 8px 5px;
+    span:not(.point) {
+      display: inline-block;
+      .color(#15c5ce);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      min-width: 40px;
+      margin-right: 10px;
+    }
+    span:nth-of-type(1) {
+      .color(#ff8156);
+    }
+  }
+  .point {
+    float: right;
+    font-size: 22px;
+    color: #15c5ce;
+  }
+  .game-name {
+    font-size: 18px;
+    font-weight: bolder;
+  }
+  .game-desc {
+    font-size: 14px;
+    margin-top: 8px;
+    color: rgba(6, 11, 21, 60%)
+  }
+}
+
+.intro {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  height: 120%;
+  width: 50%;
+  background: rgba(15, 15, 18, 0.9);
+  filter: blur(20px);
+}
+.intro__title {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  width: 40%;
+  height: 60%;
+  font-size: 27px;
+  font-weight: bolder;
+  padding: 20px;
+  box-sizing: border-box;
+  p:not(:first-of-type) {
+    margin-top: 40px;
+    font-size: 15px;
+    color: #15c5ceaa;
+  }
+}

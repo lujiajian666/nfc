@@ -5,9 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: rgb(244, 244, 244);
+  background-color: rgb(6, 17, 33);
 }
+p {
+  margin: 0
+}
+ul {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+}
+.svg-icon {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: top;
+}
+:root {
+  --primary-color: #061121
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
