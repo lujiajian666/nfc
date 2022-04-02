@@ -64,11 +64,22 @@ function Home() {
         games.map((game) => (
           <SwiperSlide key={game.id}>
             <div className={less.slide}>
-              <img alt={game.desc} src={game.url} />
+              <img className={less.bg} alt={game.desc} src={game.url} />
               <div className={less.intro} />
               <div className={less.intro__title}>
-                <p>{game.name}</p>
-                <p>{game.desc}</p>
+                <p className={less.name}>{game.name}</p>
+                <div style={{ fontSize: 0 }}>
+                  <div className={less.icon}>
+                    <img src={game.url} alt={game.desc} />
+                  </div>
+                  <div className={less.icon}>
+                    <img src={game.url} alt={game.desc} />
+                  </div>
+                  <div className={less.icon}>
+                    <img src={game.url} alt={game.desc} />
+                  </div>
+                </div>
+                <p className={less.desc}>{game.desc}</p>
               </div>
             </div>
           </SwiperSlide>

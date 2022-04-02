@@ -5,6 +5,8 @@
   line-height: 35px;
 }
 .swiper {
+  width: calc(100% - 40px);
+  margin-left: 20px;
   :global(.swiper-pagination-bullet:not(.swiper-pagination-bullet-active)) {
     background: white;
   }
@@ -16,7 +18,34 @@
   margin: 0 0% 50px;
   padding: 15% 0;
   overflow: hidden;
-  img {
+  .intro {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    height: 120%;
+    width: 50%;
+    background: rgba(15, 15, 18, 0.9);
+    filter: blur(20px);
+  }
+  .intro__title {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 40%;
+    height: calc(100% - 20px);
+    font-size: 27px;
+    font-weight: bolder;
+    padding: 0 0 0 40px;
+    box-sizing: border-box;
+    .name {
+      margin-bottom: 10px;
+    }
+    .desc {
+      font-size: 15px;
+      color: #15c5ceaa;
+    }
+  }
+  .bg {
     position: absolute;
     left: 0;
     top: 0;
@@ -25,17 +54,36 @@
     object-fit: cover;
     object-position: center;
   }
+  .icon {
+    position: relative;
+    display: inline-block;
+    height: 0;
+    width: 45%;
+    padding: 12% 0;
+    margin: 0 0 3%;
+    &:nth-child(2n+1) {
+      margin-right: 3%;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 .game-area {
   width: 100%;
   padding: 0 20px 40px;
+  box-sizing: border-box;
 }
 .game-card {
   display: inline-block;
-  width: 45%;
+  width: 48%;
   margin-bottom: 40px;
   &:nth-of-type(2n+1) {
-    margin-right: 3%;
+    margin-right: 4%;
   }
   border-radius: 10px;
   overflow: hidden;
@@ -86,31 +134,5 @@
     font-size: 14px;
     margin-top: 8px;
     color: rgba(6, 11, 21, 60%)
-  }
-}
-
-.intro {
-  position: absolute;
-  top: -10%;
-  right: -10%;
-  height: 120%;
-  width: 50%;
-  background: rgba(15, 15, 18, 0.9);
-  filter: blur(20px);
-}
-.intro__title {
-  position: absolute;
-  top: 5%;
-  right: 0;
-  width: 40%;
-  height: 60%;
-  font-size: 27px;
-  font-weight: bolder;
-  padding: 20px;
-  box-sizing: border-box;
-  p:not(:first-of-type) {
-    margin-top: 40px;
-    font-size: 15px;
-    color: #15c5ceaa;
   }
 }
