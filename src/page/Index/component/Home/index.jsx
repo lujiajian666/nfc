@@ -2,9 +2,9 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
-import game1Pic from '../../../../asset/img/game1.jpeg';
-import game2Pic from '../../../../asset/img/game2.jpeg';
-import game3Pic from '../../../../asset/img/game3.jpeg';
+import game1Pic from '@/asset/img/game1.jpeg';
+import game2Pic from '@/asset/img/game2.jpeg';
+import game3Pic from '@/asset/img/game3.jpeg';
 import less from './index.less';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -54,7 +54,7 @@ function Home() {
         spaceBetween={50}
         slidesPerView={1}
         loop
-        // autoplay
+        autoplay
         navigation
         pagination={{ clickable: true }}
         onSlideChange={() => console.log('slide change')}

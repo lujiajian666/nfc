@@ -103,7 +103,7 @@ module.exports = function (webpackEnv) {
   const shouldUseReactRefresh = env.raw.FAST_REFRESH;
 
   // common function to get style loaders
-  const getStyleLoaders = (cssOptions, preProcessor) => {
+  const getStyleLoaders = (cssOptions, preProcessor, preProcessorOptions) => {
     const loaders = [
       isEnvDevelopment && require.resolve('style-loader'),
       isEnvProduction && {
@@ -176,6 +176,7 @@ module.exports = function (webpackEnv) {
         {
           loader: require.resolve(preProcessor),
           options: {
+            ...preProcessorOptions,
             sourceMap: true,
           },
         },
@@ -312,6 +313,7 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '@': path.resolve(process.cwd(), './src'),
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -550,6 +552,11 @@ module.exports = function (webpackEnv) {
                   },
                 },
                 'less-loader',
+                {
+                  lessOptions: {
+                    paths: [path.resolve(__dirname, 'node_modules')],
+                  },
+                },
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
