@@ -1,0 +1,60 @@
+.wrapper {
+  display: flex;
+  height: 96px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(88, 163, 82, .1);
+  cursor: pointer;
+}
+.no {
+  width: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+  line-height: 96px;
+  margin-right: 10px;
+}
+.icon {
+  border-radius: 20px;
+  height: 96px;
+  width: 96px;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 16px;
+}
+.desc {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  .name {
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .point {
+    vertical-align: bottom;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 14px;
+  }
+  .tag {
+    position: relative;
+    cursor: pointer;
+    margin-right: 14px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    &:not(:last-of-type)::after {
+      content: "";
+      position: absolute;
+      right: -7px;
+      top: 50%;
+      margin-top: -1px;
+      display: block;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: #868c92;
+    }
+  }
+}

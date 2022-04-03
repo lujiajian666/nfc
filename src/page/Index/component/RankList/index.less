@@ -1,0 +1,117 @@
+.rank-wrapper {
+  width: calc(100% + 40px);
+}
+.game-list {
+  display: inline-block;
+  min-height: 100vh;
+  width: 70%;
+  background: #95bbd4;
+}
+.menu-wrapper {
+  box-sizing: border-box;
+  position: relative;
+  width: calc(100% - 20px);
+  padding: 30px 14px 20px;
+  border-bottom: 1px solid rgba(88, 163, 82, 0.1);
+  border-top: 3px solid #1199fa;
+  background:  #0f1c39;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -20px;
+    width: 20px;
+    height: calc(100% + 4px);
+    background: #061121;
+  }
+}
+.menu {
+  li {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      bottom: -20px;
+      width: 0;
+      transition: 0.2s all linear;
+      border-bottom: 3px solid #1199fa;
+    }
+    &:is(:hover, .active)::before {
+      left: 0;
+      width: 100%;
+    }
+    &:is(:hover, .active) {
+      color: #11d0fa;
+    }
+    &:hover ~ li::before {
+      left: 0;
+    }
+  }
+}
+.swiper {
+  padding-right: 20px;
+}
+.game-detail {
+  height: 800px;
+  vertical-align: top;
+  display: inline-block;
+  width: 30%;
+  background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
+  box-sizing: border-box;
+  padding: 10px;
+  .img {
+    position: relative;
+    width: 100%;
+    padding: 50% 0;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    line-height: 40px;
+    color: black;
+  }
+  .desc {
+    margin-top: 20px;
+    text-indent: 1em;
+    color: rgba(9, 10, 9, 0.921);
+  }
+}
+.game-item {
+  position: relative;
+  background: #0f1c39;
+  &:is(.active, :hover) {
+    // background: transparent;
+    background: linear-gradient(90deg, #0f1c39 0, transparent 100%);;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: calc(100% + 1px);
+    background: #061121;
+  }
+  &:is(.active, :hover)::after {
+    background: transparent;
+  }
+}

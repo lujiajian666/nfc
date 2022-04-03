@@ -1,10 +1,22 @@
 @import '@/asset/less/common.less';
 
 .title {
+  position: relative;
   margin: 0 0 20px 20px;
   font-weight: 600;
   font-size: 29px;
   line-height: 35px;
+  padding-left: 20px;
+  background: linear-gradient(90deg, transparent 0, #1199fa 100%);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background: linear-gradient(90deg, #1199fa, #11d0fa);
+  }
 }
 .swiper {
   width: calc(100% - 40px);
@@ -115,8 +127,9 @@
       color: @color;
     }
     margin: 8px 5px;
-    span:not(.point) {
+    .tag {
       display: inline-block;
+      margin-bottom: 5px;
       .color(#15c5ce);
       padding: 1px 6px;
       border-radius: 4px;
@@ -125,14 +138,14 @@
       min-width: 40px;
       margin-right: 10px;
     }
-    span:nth-of-type(1) {
+    .tag:nth-of-type(1) {
       .color(#ff8156);
     }
   }
   .point {
-    float: right;
-    font-size: 22px;
-    color: #15c5ce;
+    @media screen and (min-width: 1200px) {
+      float: right;
+    }
   }
   .game-name {
     font-size: 18px;

@@ -11,6 +11,15 @@ import Login from './page/Login';
 import Home from './page/Index/component/Home';
 import RankList from './page/Index/component/RankList';
 
+// eslint-disable-next-line
+export function ScrollTop(Component) {
+  return function () {
+    // eslint-disable-next-line
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    return <Component />;
+  };
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

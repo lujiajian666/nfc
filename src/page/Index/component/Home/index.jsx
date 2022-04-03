@@ -2,50 +2,15 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
-import game1Pic from '@/asset/img/game1.jpeg';
-import game2Pic from '@/asset/img/game2.jpeg';
-import game3Pic from '@/asset/img/game3.jpeg';
 import less from './index.less';
+import gameData from '@/asset/data/gameData';
+import Point from '@/component/Point';
+import { ScrollTop } from '@/';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 function Home() {
-  const games = [{
-    id: 1,
-    url: game1Pic,
-    desc: 'af dfj af akfno di gdkjg, agood game desc!!!',
-    name: 'game1',
-  },
-  {
-    id: 2,
-    url: game2Pic,
-    desc: 'a fafjakg ajakf is oa ag adddf good game desc!!!',
-    name: 'game2',
-  },
-  {
-    id: 3,
-    url: game3Pic,
-    desc: 'good game desc!!!',
-    name: 'game3 asdfj',
-  },
-  {
-    id: 4,
-    url: game1Pic,
-    desc: 'af df afkagh akshka adjf  good game desc!!!',
-    name: 'game4 df',
-  },
-  {
-    id: 5,
-    url: game2Pic,
-    desc: 'good game desc!!!',
-    name: 'game1',
-  },
-  {
-    id: 6,
-    url: game3Pic,
-    desc: 'good game desc!!!',
-    name: 'game1',
-  }];
+  const games = gameData;
   return (
     <>
       <p className={less.title}>Recommend Game</p>
@@ -57,8 +22,6 @@ function Home() {
         autoplay
         navigation
         pagination={{ clickable: true }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {
         games.map((game) => (
@@ -96,13 +59,10 @@ function Home() {
             </div>
             <div className={less.desc}>
               <div className={less['type-and-point']}>
-                <span>tag1</span>
-                <span>tag2</span>
-                <span>tag3</span>
-                <span className={less.point}>
-                  <svg className="svg-icon"><use xlinkHref="#icon-ico-star" /></svg>
-                  7.0
-                </span>
+                <span className={less.tag}>tag1</span>
+                <span className={less.tag}>tag2</span>
+                <span className={less.tag}>tag3</span>
+                <Point className={less.point} point="7.0" />
               </div>
               <p className={less['game-name']}>{game.name}</p>
               <p className={less['game-desc']}>{game.desc}</p>
@@ -114,4 +74,4 @@ function Home() {
     </>
   );
 }
-export default Home;
+export default ScrollTop(Home);
