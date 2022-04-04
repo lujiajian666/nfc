@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import less from './index.less';
 import Header from './component/Header';
-import RadioButton from '../../component/RadioButton';
+import Button from '../../component/Button';
 
 function Index() {
   const location = useLocation();
@@ -54,7 +54,7 @@ function Index() {
                 }
               }}
             >
-              <RadioButton
+              <Button
                 active={item.active}
                 txt={(
                   <div>

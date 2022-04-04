@@ -4,8 +4,8 @@ import 'swiper/swiper-bundle.css';
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 import less from './index.less';
 import gameData from '@/asset/data/gameData';
-import Point from '@/component/Point';
 import { ScrollTop } from '@/';
+import GameCard from '@/component/GameCard';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -53,21 +53,12 @@ function Home() {
       <div className={less['game-area']}>
         {
         games.map((game) => (
-          <div key={game.id} className={less['game-card']}>
-            <div className={less['img-wrapper']}>
-              <img src={game.url} alt={game.desc} />
-            </div>
-            <div className={less.desc}>
-              <div className={less['type-and-point']}>
-                <span className={less.tag}>tag1</span>
-                <span className={less.tag}>tag2</span>
-                <span className={less.tag}>tag3</span>
-                <Point className={less.point} point="7.0" />
-              </div>
-              <p className={less['game-name']}>{game.name}</p>
-              <p className={less['game-desc']}>{game.desc}</p>
-            </div>
-          </div>
+          <GameCard
+            id={game.id}
+            desc={game.desc}
+            name={game.name}
+            url={game.url}
+          />
         ))
       }
       </div>

@@ -18,7 +18,7 @@ function RankList() {
 
   const [currentTab, setCurrentTab] = useState(menu[0].id);
   const [swiper, setSwiper] = useState();
-  const [currGame, setCurrGame] = useState({});
+  const [currGame, setCurrGame] = useState(games[0]);
   const [activeIndex, setActiveIndex] = useState(0);
   const onChooseGame = useCallback((game, index) => {
     setCurrGame(game);

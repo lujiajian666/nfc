@@ -10,6 +10,7 @@ import Index from './page/Index';
 import Login from './page/Login';
 import Home from './page/Index/component/Home';
 import RankList from './page/Index/component/RankList';
+import Search from './page/Search';
 
 // eslint-disable-next-line
 export function ScrollTop(Component) {
@@ -25,9 +26,11 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />}>
+          <Route path="" element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="rank" element={<RankList />} />
         </Route>
+        <Route path="/search/:word" element={<Search />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>

@@ -554,7 +554,7 @@ module.exports = function (webpackEnv) {
                 'less-loader',
                 {
                   lessOptions: {
-                    paths: [path.resolve(__dirname, 'node_modules')],
+                    paths: [path.resolve(__dirname, '../src')],
                   },
                 },
               ),
